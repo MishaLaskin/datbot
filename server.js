@@ -22,6 +22,171 @@ controller.setupWebserver(port, function (err, webserver) {
   })
 })
 
-controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {  
+
+/* SAY HELLO!!!! */
+/*controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {  
     bot.reply(message, "Hi there!");
+})*/
+
+
+
+
+/* *****************************
+   GLOBAL FUNCTIONS
+***************************** */
+
+
+var httpGet = function(url) {
+	return new Promise(function(resolve, reject) {
+
+		https.get(url, function(res) {
+
+			var body = '';
+
+			res.on('data', function(data) {
+				data = data.toString();
+				body += data;
+			});
+
+			res.on('end', function() {
+				body = JSON.parse(body);
+				var stories = body;
+				resolve(stories);
+			});
+
+		}).on('error', function(err) {
+			reject(err)
+		});
+
+	})
+}
+
+
+var handleError = function(bot, message, err) {
+
+	console.log(err);
+
+	var reply = "Oops! Looks like there was an error. Here are the details..";
+
+	bot.reply(message, reply, function(err, response) {
+
+		bot.reply(message, err, function(err, response) {
+
+			var reply = "Email ire@ireaderinokun.com to report this bug."
+			bot.reply(message, reply);
+
+		});
+
+	});
+
+}
+
+
+/* *****************************
+	CHOOSE CATEGORY
+***************************** */
+
+var chooseCategoryPrompt = function(bot, message) {
+
+	var reply = "Choose a category...";
+
+	bot.reply(message, reply, function(err, response) {
+
+		var categories = [
+			{
+				"title": "Tech",
+				"buttons":[
+					{
+						"type":"postback",
+						"payload": "getPosts_tech",
+						"title":"Today's Hunts"
+					},
+					{
+						"type":"postback",
+						"payload": "getPosts_tech_1",
+						"title":"Yesterday's Hunts"
+					}
+				]
+			},
+			{
+				"title": "Games",
+				"buttons":[
+					{
+						"type":"postback",
+						"payload": "getPosts_games",
+						"title":"Today's Hunts"
+					},
+					{
+						"type":"postback",
+						"payload": "getPosts_games_1",
+						"title":"Yesterday's Hunts"
+					}
+				]
+			},
+			{
+				"title": "Podcasts",
+				"buttons":[
+					{
+						"type":"postback",
+						"payload": "getPosts_podcasts",
+						"title":"Today's Hunts"
+					},
+					{
+						"type":"postback",
+						"payload": "getPosts_podcasts_1",
+						"title":"Yesterday's Hunts"
+					}
+				]
+			},
+			{
+				"title": "Books",
+				"buttons":[
+					{
+						"type":"postback",
+						"payload": "getPosts_books",
+						"title":"Today's Hunts"
+					},
+					{
+						"type":"postback",
+						"payload": "getPosts_books_1",
+						"title":"Yesterday's Hunts"
+					}
+				]
+			}
+		]
+
+		bot.reply(message, {
+			attachment: {
+			  type: 'template',
+			  payload: {
+				template_type: 'generic',
+				elements: categories
+			  }
+			}
+		})
+
+	})
+
+}
+
+
+
+/* *****************************
+	CONTROLLER
+***************************** */
+
+
+
+/****  KEYWORDS ************************/
+
+controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {
+	var reply = "Hi there! I have some hunts for you";
+	bot.reply(message, reply, function(err, response) {
+		if (err) handleError(bot, message, err);
+		chooseCategoryPrompt(bot, message);
+	});
+})
+
+controller.hears(['category', 'categories'], 'message_received', function (bot, message) {
+	chooseCategoryPrompt(bot, message);
 })
