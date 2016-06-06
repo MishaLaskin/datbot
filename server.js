@@ -190,3 +190,14 @@ controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, mess
 controller.hears(['category', 'categories'], 'message_received', function (bot, message) {
 	chooseCategoryPrompt(bot, message);
 })
+
+/****  OTHER EVENTS  ************************/
+
+controller.on('facebook_optin', function (bot, message) {
+	var reply = 'Welcome! I have some products for you';
+	bot.reply(message, reply, function(err) {
+		if (err) handleError(bot, message, err);
+		chooseCategoryPrompt(bot, message);
+	});
+
+});
