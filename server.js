@@ -15,6 +15,8 @@ var controller = Botkit.facebookbot({
 
 var bot = controller.spawn()
 
+var userid = 0;
+
 controller.setupWebserver(port, function(err, webserver) {
 	if (err) return console.log(err)
 	controller.createWebhookEndpoints(webserver, bot, function() {
@@ -405,4 +407,12 @@ controller.on('facebook_postback', function(bot, message) {
 
 });
 
+controller.storage.users.get(id, function(err, user_data) {
+	
+	userid = id;
+});
+
+controller.hears(['who am I?'], 'message_received', function(bot, message) {
+ bot.reply(message, "Your id is " + userid.toString());
+});
 
