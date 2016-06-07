@@ -179,16 +179,17 @@ var chooseCategoryPrompt = function(bot, message) {
 
 /****  KEYWORDS ************************/
 
-controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {
+/*controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {
 	var reply = "Hi there! I have some hunts for you";
 	bot.reply(message, reply, function(err, response) {
 		if (err) handleError(bot, message, err);
+		chooseCategoryPrompt(bot, message);
 	});
 })
 
 controller.hears(['category', 'categories'], 'message_received', function (bot, message) {
 	chooseCategoryPrompt(bot, message);
-})
+})*/
 
 controller.hears(['cookies'], 'message_received', function(bot, message) {
 
@@ -208,6 +209,7 @@ controller.on('facebook_optin', function (bot, message) {
 	var reply = 'Welcome! I have some products for you';
 	bot.reply(message, reply, function(err) {
 		if (err) handleError(bot, message, err);
+		chooseCategoryPrompt(bot, message);
 	});
 
 });
