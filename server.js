@@ -218,6 +218,39 @@ controller.on('facebook_optin', function (bot, message) {
 controller.hears('test', 'message_received', function(bot, message) {
 
     var attachment = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "First card",
+                    "subtitle": "Element #1 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "web url"
+                    }, {
+                        "type": "postback",
+                        "title": "Postback",
+                        "payload": "Payload for first element in a generic bubble",
+                    }],
+                }, {
+                    "title": "Second card",
+                    "subtitle": "Element #2 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Postback",
+                        "payload": "Payload for second element in a generic bubble",
+                    }],
+                }]
+            }
+        }
+    }
+	
+	
+	/*{
         'type':'template',
         'payload':{
             'template_type':'generic',
@@ -258,7 +291,7 @@ controller.hears('test', 'message_received', function(bot, message) {
                 }
             ]
         }
-    };
+    };*/
 
     bot.reply(message, {
         attachment: attachment,
