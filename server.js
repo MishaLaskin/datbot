@@ -183,7 +183,6 @@ controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, mess
 	var reply = "Hi there! I have some hunts for you";
 	bot.reply(message, reply, function(err, response) {
 		if (err) handleError(bot, message, err);
-		chooseCategoryPrompt(bot, message);
 	});
 })
 
@@ -209,7 +208,44 @@ controller.on('facebook_optin', function (bot, message) {
 	var reply = 'Welcome! I have some products for you';
 	bot.reply(message, reply, function(err) {
 		if (err) handleError(bot, message, err);
-		chooseCategoryPrompt(bot, message);
 	});
+
+});
+/** test area **/
+
+controller.hears('test', 'message_received', function(bot, message) {
+
+    var attachment = {
+        'type':'template',
+        'payload':{
+            'template_type':'generic',
+            'elements':[
+                {
+                    'title':'Chocolate Cookie',
+                    'image_url':'http://cookies.com/cookie.png',
+                    'subtitle':'A delicious chocolate cookie',
+                    'buttons':[
+                        {
+                        'type':'postback',
+                        'title':'Eat Cookie',
+                        'payload':'chocolate'
+                        }
+                    ]
+                },
+            ]
+        }
+    };
+
+    bot.reply(message, {
+        attachment: attachment,
+    });
+
+});
+
+controller.on('facebook_postback', function(bot, message) {
+
+    if (message.payload == 'chocolate') {
+        bot.reply(message, 'You ate the chocolate cookie!')
+    }
 
 });
