@@ -330,7 +330,7 @@ controller.on('facebook_optin', function(bot, message) {
 
 });
 /** test area **/
-
+/*
 controller.hears('pixies', 'message_received', function(bot, message) {
 
 
@@ -390,13 +390,13 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 			}]
 		}
 	};*/
-
+/*
 	bot.reply(message, {
 		attachment: attachment,
 	});
 
 });
-
+*/
 controller.on('facebook_postback', function(bot, message) {
 
 	if (message.payload == 'chocolate') {
