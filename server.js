@@ -32,7 +32,7 @@ controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, mess
 
 //makes 1,2,or 3 card galleries with 2 buttons
 
-/*function makecards(post) {
+function makecards(post) {
 
 	var messageData = [];
 
@@ -150,7 +150,7 @@ controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, mess
 					}
 				}
 			}
-			break;*//*
+			break;*/
 		default:
 			messageData = "Oops! There was an error. Email misha@meetclaire, our Chief Bug Squasher."
 
@@ -160,7 +160,7 @@ controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, mess
 
 
 
-}*/
+}
 
 
 
@@ -396,7 +396,7 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 	});
 
 });
-*/
+
 controller.on('facebook_postback', function(bot, message) {
 
 	if (message.payload == 'chocolate') {
@@ -405,6 +405,4 @@ controller.on('facebook_postback', function(bot, message) {
 
 });
 
-
-
-
+*/
