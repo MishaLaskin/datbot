@@ -72,7 +72,7 @@ var handleError = function(bot, message, err) {
 
 		bot.reply(message, err, function(err, response) {
 
-			var reply = "Email ire@ireaderinokun.com to report this bug."
+			var reply = "Email misha@meetclaire.co to report this bug."
 			bot.reply(message, reply);
 
 		});
@@ -224,7 +224,7 @@ controller.hears('test', 'message_received', function(bot, message) {
             'elements':[
                 {
                     'title':'Chocolate Cookie',
-                    'image_url':'http://cookies.com/cookie.png',
+                    'image_url':'http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg',
                     'subtitle':'A delicious chocolate cookie',
                     'buttons':[
                         {
