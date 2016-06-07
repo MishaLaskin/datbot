@@ -407,12 +407,12 @@ controller.on('facebook_postback', function(bot, message) {
 
 });
 
-controller.storage.users.get(id, function(err, user_data) {
+/*controller.storage.users.get(id, function(err, user_data) {
 	
 	userid = id;
 });
 
 controller.hears(['who am I?'], 'message_received', function(bot, message) {
  bot.reply(message, "Your id is " + userid.toString());
-});
+});*/
 
