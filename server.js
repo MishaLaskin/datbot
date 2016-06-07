@@ -1,8 +1,8 @@
-var Keen = require('keen.io');
+//var Keen = require('keen.io');
 var Botkit = require('botkit');
 //var Keen = require('keen-js');
-//var Parse = require('parse')
-var https = require("https")
+var Parse = require('parse');
+var https = require("https");
 //var Parse = require('parse').Parse
 
 /*
