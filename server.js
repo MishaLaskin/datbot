@@ -1,5 +1,5 @@
 var Botkit = require('botkit');
-//var Keen = require('keen-js');
+var Keen = require('keen-js');
 
 /*
 var client = new Keen({
