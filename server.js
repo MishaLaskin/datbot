@@ -65,8 +65,7 @@ function makecards(post) {
 			break;
 		case 2:
 
-			messageData = {
-				"attachment": {
+			messageData =  {
 					"type": "template",
 					"payload": {
 						"template_type": "generic",
@@ -99,7 +98,7 @@ function makecards(post) {
 						}]
 					}
 				}
-			}
+			
 			break;
 			/*case 3:
 			messageData = {
