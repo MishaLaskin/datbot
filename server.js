@@ -246,6 +246,19 @@ controller.hears('bubi', 'message_received', function(bot, message) {
                     "title": "Postback",
                     "payload": "Payload for second element in a generic bubble",
                 }],
+            },{
+                "title": "Third card",
+                "subtitle": "Element #3 of an hscroll",
+                "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                "buttons": [{
+                    "type": "web_url",
+                    "url": "https://www.messenger.com",
+                    "title": "web url"
+                }, {
+                    "type": "postback",
+                    "title": "Postback",
+                    "payload": "Payload for third element in a generic bubble",
+                }],
             }]
         }
     };
