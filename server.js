@@ -217,8 +217,7 @@ controller.on('facebook_optin', function (bot, message) {
 
 controller.hears('test', 'message_received', function(bot, message) {
 
-    var attachment = {
-        "attachment": {
+    var attachment =  {
             "type": "template",
             "payload": {
                 "template_type": "generic",
@@ -247,7 +246,7 @@ controller.hears('test', 'message_received', function(bot, message) {
                 }]
             }
         }
-    }
+    
 	
 	
 	/*{
