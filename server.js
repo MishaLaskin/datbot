@@ -24,15 +24,15 @@ controller.setupWebserver(port, function(err, webserver) {
 
 
 /* SAY HELLO!!!! */
-/*controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {  
+controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {  
     bot.reply(message, "Hi there!");
-})*/
+})
 /* FUNCTIONS FOR MAKING POST ARRAYS */
 
 
 //makes 1,2,or 3 card galleries with 2 buttons
 
-function makecards(post) {
+/*function makecards(post) {
 
 	var messageData = [];
 
@@ -150,7 +150,7 @@ function makecards(post) {
 					}
 				}
 			}
-			break;*/
+			break;*//*
 		default:
 			messageData = "Oops! There was an error. Email misha@meetclaire, our Chief Bug Squasher."
 
@@ -160,7 +160,7 @@ function makecards(post) {
 
 
 
-}
+}*/
 
 
 
