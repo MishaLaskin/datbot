@@ -215,82 +215,40 @@ controller.on('facebook_optin', function (bot, message) {
 });
 /** test area **/
 
-controller.hears('test', 'message_received', function(bot, message) {
+controller.hears('bubi', 'message_received', function(bot, message) {
 
-    var attachment =  {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.messenger.com",
-                        "title": "web url"
-                    }, {
-                        "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for first element in a generic bubble",
-                    }],
-                }, {
-                    "title": "Second card",
-                    "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for second element in a generic bubble",
-                    }],
-                }]
-            }
-        }
-    
+    var attachment =  
 	
 	
-	/*{
+	{
         'type':'template',
         'payload':{
             'template_type':'generic',
-            'elements':[
-                {
-                    'title':'Chocolate Cookie',
-                    'image_url':"http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg",
-                    'subtitle':'A delicious chocolate cookie',
-                    'buttons':[
-                        {
-                        'type':'postback',
-                        'title':'Eat Cookie',
-                        'payload':'chocolate'
-                        }
-                    ]
-                },{
-                    'title':'Chocolate Cookie',
-                    'image_url':"http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg",
-                    'subtitle':'A delicious chocolate cookie',
-                    'buttons':[
-                        {
-                        'type':'postback',
-                        'title':'Eat Cookie',
-                        'payload':'chocolate'
-                        }
-                    ]
-                },{
-                    'title':'Chocolate Cookie',
-                    'image_url':"http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg",
-                    'subtitle':'A delicious chocolate cookie',
-                    'buttons':[
-                        {
-                        'type':'postback',
-                        'title':'Eat Cookie',
-                        'payload':'chocolate'
-                        }
-                    ]
-                }
-            ]
+            "elements": [{
+                "title": "First card",
+                "subtitle": "Element #1 of an hscroll",
+                "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                "buttons": [{
+                    "type": "web_url",
+                    "url": "https://www.messenger.com",
+                    "title": "web url"
+                }, {
+                    "type": "postback",
+                    "title": "Postback",
+                    "payload": "Payload for first element in a generic bubble",
+                }],
+            }, {
+                "title": "Second card",
+                "subtitle": "Element #2 of an hscroll",
+                "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                "buttons": [{
+                    "type": "postback",
+                    "title": "Postback",
+                    "payload": "Payload for second element in a generic bubble",
+                }],
+            }]
         }
-    };*/
+    };
 
     bot.reply(message, {
         attachment: attachment,
