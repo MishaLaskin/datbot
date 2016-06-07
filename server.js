@@ -412,13 +412,13 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 	});
 
 });
-/*
+
 controller.on('facebook_postback', function(bot, message) {
 
-	if (message.payload == 'chocolate') {
-		bot.reply(message, 'You ate the chocolate cookie!')
-	}
+	//if (message.payload == 'chocolate') {
+		bot.reply(message, message.payload);
+		//}
 
 });
 
-*/
+
