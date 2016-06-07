@@ -1,7 +1,7 @@
 var Botkit = require('botkit');
 var Keen = require('keen-js');
 
-
+/*
 var client = new Keen({
    projectId: "570143c090e4bd405cc38f9f", // String (required always)
    writeKey: "ed6a9c0ac0f8f6cc26ae277e5a6ed99bbcbf1d9227ea47e84abb25c30e9727eab4d1d61593dc1a55188d86de90f7a546fed32e637de032c17f89a486ca38dbe429a5ccfe2bf3bf3d66b6d2b4aefac465072f38da6f56caa90b21f7c387079a07",   // String (required for sending data)
@@ -11,7 +11,7 @@ var client = new Keen({
    // host: "api.keen.io/3.0",   // String (optional)
    // requestType: "jsonp"       // String (optional: jsonp, xhr, beacon)
  });
-
+*/
 
 
 var accessToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN
