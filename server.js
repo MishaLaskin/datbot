@@ -1,6 +1,7 @@
 var Botkit = require('botkit');
 //var Keen = require('keen-js');
 //var Parse = require('parse')
+var https = require("https")
 /*
 var client = new Keen({
    projectId: "570143c090e4bd405cc38f9f", // String (required always)
