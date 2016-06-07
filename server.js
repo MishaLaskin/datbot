@@ -429,26 +429,29 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 
 controller.on('facebook_postback', function(bot, message) {
 	
-	bot.reply(message, message.payload )
-	// Create a data object with the properties you want to send
-	var purchaseEvent = {
-	  item: "golden gadget",  
-	  price: 2550, // track dollars as cents
-	  referrer: document.referrer,
-	  keen: {
-	    timestamp: new Date().toISOString()
-	  }
-	};
+	
+	bot.reply(message, message.payload, function(err) {
+		if (err) handleError(bot, message, err);
+		var purchaseEvent = {
+		  item: "golden gadget",  
+		  price: 2550, // track dollars as cents
+		  referrer: document.referrer,
+		  keen: {
+		    timestamp: new Date().toISOString()
+		  }
+		};
 
-	// Send it to the "purchases" collection
-	client.addEvent("purchases", purchaseEvent, function(err, res){
-	  if (err) {
-	    // there was an error!
-	  }
-	  else {
-	    // see sample response below
-	  }
+		// Send it to the "purchases" collection
+		client.addEvent("purchases", purchaseEvent, function(err, res){
+		  if (err) {
+		    // there was an error!
+		  }
+		  else {
+		    // see sample response below
+		  }
+		});
 	});
+	
 
 
 
