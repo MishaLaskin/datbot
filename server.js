@@ -63,7 +63,7 @@ function makecards(post) {
 				}
 			
 			break;
-			/*case 2:
+		case 2:
 
 			messageData = {
 				"attachment": {
@@ -101,7 +101,7 @@ function makecards(post) {
 				}
 			}
 			break;
-		case 3:
+			/*case 3:
 			messageData = {
 				"attachment": {
 					"type": "template",
@@ -335,6 +335,15 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 
 
 	var examplePost = [{
+		title: "Hey",
+		subtitle: "Been Trying to meet ya",
+		image_url: "http://assets.rollingstone.com/assets/images/artists/pixies.jpg",
+		btn1title: "Good song bro",
+		btn1payload: "Oh yea",
+		btn2title: "Boo, bad song",
+		btn2payload: "What???",
+		
+	},{
 		title: "Hey",
 		subtitle: "Been Trying to meet ya",
 		image_url: "http://assets.rollingstone.com/assets/images/artists/pixies.jpg",
