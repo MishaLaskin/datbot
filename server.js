@@ -100,9 +100,8 @@ function makecards(post) {
 				}
 			
 			break;
-			/*case 3:
-			messageData = {
-				"attachment": {
+		case 3:
+			messageData =  {
 					"type": "template",
 					"payload": {
 						"template_type": "generic",
@@ -148,8 +147,8 @@ function makecards(post) {
 						}]
 					}
 				}
-			}
-			break;*/
+			
+				break;
 		default:
 			messageData = "Oops! There was an error. Email misha@meetclaire, our Chief Bug Squasher."
 
@@ -334,6 +333,15 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 
 
 	var examplePost = [{
+		title: "Hey",
+		subtitle: "Been Trying to meet ya",
+		image_url: "http://assets.rollingstone.com/assets/images/artists/pixies.jpg",
+		btn1title: "Good song bro",
+		btn1payload: "Oh yea",
+		btn2title: "Boo, bad song",
+		btn2payload: "What???",
+		
+	},{
 		title: "Hey",
 		subtitle: "Been Trying to meet ya",
 		image_url: "http://assets.rollingstone.com/assets/images/artists/pixies.jpg",
