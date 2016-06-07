@@ -27,7 +27,140 @@ controller.setupWebserver(port, function(err, webserver) {
 /*controller.hears(['hello', 'hi', 'hey'], 'message_received', function (bot, message) {  
     bot.reply(message, "Hi there!");
 })*/
+/* FUNCTIONS FOR MAKING POST ARRAYS */
 
+
+//makes 1,2,or 3 card galleries with 2 buttons
+
+function makecards(post) {
+
+	var messageData = [];
+
+	var number = post.length;
+
+	switch (number) {
+		case 1:
+
+			messageData =  {
+					"type": "template",
+					"payload": {
+						"template_type": "generic",
+						"elements": [{
+							"title": post[0].title,
+							"subtitle": post[0].subtitle,
+							"image_url": post[0].image_url,
+							"buttons": [{
+								"type": "postback",
+								"title": post[0].btn1title,
+								"payload": post[0].btn1payload
+							}, {
+								"type": "postback",
+								"title": post[0].btn2title,
+								"payload": post[0].btn2payload,
+							}],
+						}]
+					}
+				}
+			
+			break;
+			/*case 2:
+
+			messageData = {
+				"attachment": {
+					"type": "template",
+					"payload": {
+						"template_type": "generic",
+						"elements": [{
+							"title": post[0].title,
+							"subtitle": post[0].subtitle,
+							"image_url": post[0].image_url,
+							"buttons": [{
+								"type": "postback",
+								"title": post[0].btn1title,
+								"payload": post[0].btn1payload
+							}, {
+								"type": "postback",
+								"title": post[0].btn2title,
+								"payload": post[0].btn2payload,
+							}],
+						}, {
+							"title": post[1].title,
+							"subtitle": post[1].subtitle,
+							"image_url": post[1].image_url,
+							"buttons": [{
+								"type": "postback",
+								"title": post[1].btn1title,
+								"payload": post[1].btn1payload
+							}, {
+								"type": "postback",
+								"title": post[1].btn2title,
+								"payload": post[1].btn2payload,
+							}],
+						}]
+					}
+				}
+			}
+			break;
+		case 3:
+			messageData = {
+				"attachment": {
+					"type": "template",
+					"payload": {
+						"template_type": "generic",
+						"elements": [{
+							"title": post[0].title,
+							"subtitle": post[0].subtitle,
+							"image_url": post[0].image_url,
+							"buttons": [{
+								"type": "postback",
+								"title": post[0].btn1title,
+								"payload": post[0].btn1payload
+							}, {
+								"type": "postback",
+								"title": post[0].btn2title,
+								"payload": post[0].btn2payload,
+							}],
+						}, {
+							"title": post[1].title,
+							"subtitle": post[1].subtitle,
+							"image_url": post[1].image_url,
+							"buttons": [{
+								"type": "postback",
+								"title": post[1].btn1title,
+								"payload": post[1].btn1payload
+							}, {
+								"type": "postback",
+								"title": post[1].btn2title,
+								"payload": post[1].btn2payload,
+							}],
+						}, {
+							"title": post[2].title,
+							"subtitle": post[2].subtitle,
+							"image_url": post[2].image_url,
+							"buttons": [{
+								"type": "postback",
+								"title": post[2].btn1title,
+								"payload": post[2].btn1payload
+							}, {
+								"type": "postback",
+								"title": post[2].btn2title,
+								"payload": post[2].btn2payload,
+							}],
+						}]
+					}
+				}
+			}
+			break;*/
+		default:
+			messageData = "Oops! There was an error. Email misha@meetclaire, our Chief Bug Squasher."
+
+	}
+
+	return messageData;
+
+
+
+}
 
 
 
@@ -198,7 +331,7 @@ controller.on('facebook_optin', function(bot, message) {
 });
 /** test area **/
 
-controller.hears('bubi', 'message_received', function(bot, message) {
+controller.hears('pixies', 'message_received', function(bot, message) {
 
 
 	var examplePost = [{
@@ -210,12 +343,12 @@ controller.hears('bubi', 'message_received', function(bot, message) {
 		btn2title: "Boo, bad song",
 		btn2payload: "What???",
 		
-	}],
+	}];
 
 	var attachment = makecards(examplePost);
 
 
-	/*{
+	/*var attachment = {
 		'type': 'template',
 		'payload': {
 			'template_type': 'generic',
@@ -272,138 +405,4 @@ controller.on('facebook_postback', function(bot, message) {
 
 });
 
-/* FUNCTIONS FOR MAKING POST ARRAYS */
 
-
-//makes 1,2,or 3 card galleries with 2 buttons
-
-function makecards(post) {
-
-	var messageData = [];
-
-	var number = post.length;
-
-	switch (number) {
-		case 1:
-
-			messageData = {
-				"attachment": {
-					"type": "template",
-					"payload": {
-						"template_type": "generic",
-						"elements": [{
-							"title": post[0].title,
-							"subtitle": post[0].subtitle,
-							"image_url": post[0].image_url,
-							"buttons": [{
-								"type": "postback",
-								"title": post[0].btn1title,
-								"payload": post[0].btn1payload
-							}, {
-								"type": "postback",
-								"title": post[0].btn2title,
-								"payload": post[0].btn2payload,
-							}],
-						}]
-					}
-				}
-			}
-			break;
-		case 2:
-
-			messageData = {
-				"attachment": {
-					"type": "template",
-					"payload": {
-						"template_type": "generic",
-						"elements": [{
-							"title": post[0].title,
-							"subtitle": post[0].subtitle,
-							"image_url": post[0].image_url,
-							"buttons": [{
-								"type": "postback",
-								"title": post[0].btn1title,
-								"payload": post[0].btn1payload
-							}, {
-								"type": "postback",
-								"title": post[0].btn2title,
-								"payload": post[0].btn2payload,
-							}],
-						}, {
-							"title": post[1].title,
-							"subtitle": post[1].subtitle,
-							"image_url": post[1].image_url,
-							"buttons": [{
-								"type": "postback",
-								"title": post[1].btn1title,
-								"payload": post[1].btn1payload
-							}, {
-								"type": "postback",
-								"title": post[1].btn2title,
-								"payload": post[1].btn2payload,
-							}],
-						}]
-					}
-				}
-			}
-			break;
-		case 3:
-			messageData = {
-				"attachment": {
-					"type": "template",
-					"payload": {
-						"template_type": "generic",
-						"elements": [{
-							"title": post[0].title,
-							"subtitle": post[0].subtitle,
-							"image_url": post[0].image_url,
-							"buttons": [{
-								"type": "postback",
-								"title": post[0].btn1title,
-								"payload": post[0].btn1payload
-							}, {
-								"type": "postback",
-								"title": post[0].btn2title,
-								"payload": post[0].btn2payload,
-							}],
-						}, {
-							"title": post[1].title,
-							"subtitle": post[1].subtitle,
-							"image_url": post[1].image_url,
-							"buttons": [{
-								"type": "postback",
-								"title": post[1].btn1title,
-								"payload": post[1].btn1payload
-							}, {
-								"type": "postback",
-								"title": post[1].btn2title,
-								"payload": post[1].btn2payload,
-							}],
-						}, {
-							"title": post[2].title,
-							"subtitle": post[2].subtitle,
-							"image_url": post[2].image_url,
-							"buttons": [{
-								"type": "postback",
-								"title": post[2].btn1title,
-								"payload": post[2].btn1payload
-							}, {
-								"type": "postback",
-								"title": post[2].btn2title,
-								"payload": post[2].btn2payload,
-							}],
-						}]
-					}
-				}
-			}
-			break;
-		default:
-			messageData = "Oops! There was an error. Email misha@meetclaire, our Chief Bug Squasher."
-
-	}
-
-	return messageData;
-
-
-
-}
