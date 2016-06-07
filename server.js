@@ -224,7 +224,7 @@ controller.hears('test', 'message_received', function(bot, message) {
             'elements':[
                 {
                     'title':'Chocolate Cookie',
-                    'image_url':'http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg',
+                    'image_url':"http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg",
                     'subtitle':'A delicious chocolate cookie',
                     'buttons':[
                         {
@@ -233,7 +233,29 @@ controller.hears('test', 'message_received', function(bot, message) {
                         'payload':'chocolate'
                         }
                     ]
-                },
+                },{
+                    'title':'Chocolate Cookie',
+                    'image_url':"http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg",
+                    'subtitle':'A delicious chocolate cookie',
+                    'buttons':[
+                        {
+                        'type':'postback',
+                        'title':'Eat Cookie',
+                        'payload':'chocolate'
+                        }
+                    ]
+                },{
+                    'title':'Chocolate Cookie',
+                    'image_url':"http://images.huffingtonpost.com/2013-04-17-cmp014asst612x4436f4446e15454e33897db6fa72433f28png_png_autocropped.jpg",
+                    'subtitle':'A delicious chocolate cookie',
+                    'buttons':[
+                        {
+                        'type':'postback',
+                        'title':'Eat Cookie',
+                        'payload':'chocolate'
+                        }
+                    ]
+                }
             ]
         }
     };
