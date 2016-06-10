@@ -1,21 +1,6 @@
-//var Keen = require('keen.io');
 var Botkit = require('botkit');
-//var Keen = require('keen-js');
-//var Parse = require('parse');
+
 var https = require("https");
-//var Parse = require('parse').Parse
-
-/*
-var client = new Keen({
-   projectId: "570143c090e4bd405cc38f9f", // String (required always)
-   writeKey: "ed6a9c0ac0f8f6cc26ae277e5a6ed99bbcbf1d9227ea47e84abb25c30e9727eab4d1d61593dc1a55188d86de90f7a546fed32e637de032c17f89a486ca38dbe429a5ccfe2bf3bf3d66b6d2b4aefac465072f38da6f56caa90b21f7c387079a07",   // String (required for sending data)
-   readKey: "95aa5dddb4a6b0fcbf9c8277e26444417976cc16e64513bb3d8c12a3a2161792a7eb3b414877bd903ce3ab96efc3352ca69c2d7777d9c9902dea3cfce116926725efa900ce0a8b68af545814a9d07b5c207f787f9701e69ac905762748f6531f"      // String (required for querying data)
-
-   // protocol: "https",         // String (optional: https | http | auto)
-   // host: "api.keen.io/3.0",   // String (optional)
-   // requestType: "jsonp"       // String (optional: jsonp, xhr, beacon)
- });
-*/
 
 
 var accessToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN
@@ -434,26 +419,7 @@ controller.hears('pixies', 'message_received', function(bot, message) {
 controller.on('facebook_postback', function(bot, message) {
 	
 	bot.reply(message, message.payload )
-	// Create a data object with the properties you want to send
-	/*var purchaseEvent = {
-	  item: "golden gadget",  
-	  price: 2550, // track dollars as cents
-	  referrer: document.referrer,
-	  keen: {
-	    timestamp: new Date().toISOString()
-	  }
-	};
-
-	// Send it to the "purchases" collection
-	client.addEvent("purchases", purchaseEvent, function(err, res){
-	  if (err) {
-	    // there was an error!
-	  }
-	  else {
-	    // see sample response below
-	  }
-	});
-*/
+	
 
 
 
