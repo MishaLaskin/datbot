@@ -1,13 +1,27 @@
 {
-  "name": "MessengerHunt",
+  "name": "messengerhunt",
   "version": "1.0.0",
-  "description": "",
+  "description": "bot for beepboop",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Misha Laskin",
   "dependencies": {
-    "botkit": "^0.1.2"
-  }
+    "botkit": "^0.1.2",
+    "keen-js": "^3.4.1",
+    "parse": "file:parse"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ireade/messenger-hunt.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ireade/messenger-hunt/issues"
+  },
+  "homepage": "https://github.com/ireade/messenger-hunt#readme",
+  "keywords": []
 }
